@@ -1,7 +1,8 @@
 const net = require('net')
+require('dotenv').config()
 
 const socket = net.connect(
-    {port: 8000, host: '192.168.56.1'},
+    {port: 8000, host: process.env.LOCAL_IP},
     function(){
         console.log("Connected")
         socket.write("Alex")
